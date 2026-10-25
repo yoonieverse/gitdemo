@@ -47,7 +47,12 @@ async function getTeam1Image() {
 
 // ===== Team 2: cat =====
 async function getTeam2Image() {
-    throw new Error('Team 2 has not built this yet.');
+    const response = await fetch('https://api.thecatapi.com/v1/images/search');
+    if (!response.ok) {
+        throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data[0].url;
 }
 
 // ===== Team 3: monkey =====
