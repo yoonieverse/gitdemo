@@ -1,12 +1,12 @@
 // ============================================================
-// ANIMAL BUTTONS WORKSHOP
+// GITHUB ANIMAL WORKSHOP
 // Each team writes ONE function that returns an image URL.
 // Find your team's section below and fill in your function.
 //   Team 1: dog     Team 2: cat     Team 3: monkey
 //   Team 4: fish    Team 5: bird
 // ============================================================
 
-const buttons = document.querySelectorAll('.dog-button');
+const buttons = document.querySelectorAll('.button');
 
 // Which function loads the image for which team
 const imageFetchers = {
@@ -37,7 +37,12 @@ async function showAnimal(teamId) {
 
 // ===== Team 1: dog =====
 async function getTeam1Image() {
-    throw new Error('Team 1 has not built this yet.');
+    const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    if (!response.ok) {
+        throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.message;
 }
 
 // ===== Team 2: cat =====
