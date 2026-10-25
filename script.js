@@ -1,10 +1,3 @@
-// ============================================================
-// GITHUB ANIMAL WORKSHOP
-// Each team writes ONE function that returns an image URL.
-// Find your team's section below and fill in your function.
-//   Team 1: dog     Team 2: cat     Team 3: monkey
-//   Team 4: fish    Team 5: bird
-// ============================================================
 
 const buttons = document.querySelectorAll('.button');
 
@@ -37,17 +30,19 @@ async function showAnimal(teamId) {
 
 // ===== Team 1: dog =====
 async function getTeam1Image() {
-    const response = await fetch('https://dog.ceo/api/breeds/image/random');
-    if (!response.ok) {
-        throw new Error(`HTTP Error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data.message;
+    throw new Error('Team1 has not implemented yet!');
+
+    // const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    // if (!response.ok) {
+    //     throw new Error(`HTTP Error! Status: ${response.status}`);
+    // }
+    // const data = await response.json();
+    // return data.message;
 }
 
 // ===== Team 2: cat =====
 async function getTeam2Image() {
-    const response = await fetch('https://api.thecatapi.com/v1/images/search');
+  const response = await fetch('https://api.thecatapi.com/v1/images/search');
     if (!response.ok) {
         throw new Error(`HTTP Error! Status: ${response.status}`);
     }
@@ -57,15 +52,36 @@ async function getTeam2Image() {
 
 // ===== Team 3: monkey =====
 async function getTeam3Image() {
-    throw new Error('Team 3 has not built this yet.');
+     const pages = ['Capuchin_monkey', 'Mandrill', 'Japanese_macaque', 'Howler_monkey', 'Squirrel_monkey'];
+    const page = pages[Math.floor(Math.random() * pages.length)];
+    const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${page}`);
+    if (!response.ok) {
+        throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.thumbnail.source;
 }
 
 // ===== Team 4: fish =====
 async function getTeam4Image() {
-    throw new Error('Team 4 has not built this yet.');
+    const pages = ['Clownfish', 'Goldfish', 'Seahorse', 'Pufferfish'];
+    const page = pages[Math.floor(Math.random() * pages.length)];
+    const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${page}`);
+    if (!response.ok) {
+        throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.thumbnail.source;
 }
 
 // ===== Team 5: bird =====
 async function getTeam5Image() {
-    throw new Error('Team 5 has not built this yet.');
+    const pages = ['Atlantic_puffin', 'Flamingo', 'Blue_jay', 'Bald_eagle', 'Scarlet_macaw', 'Kingfisher'];
+    const page = pages[Math.floor(Math.random() * pages.length)];
+    const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${page}`);
+    if (!response.ok) {
+        throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.thumbnail.source;
 }
