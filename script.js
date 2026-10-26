@@ -40,14 +40,14 @@ async function showAnimal(teamId) {
 
 // ===== Team 1: dog =====
 async function getTeam1Image() {
-    // throw new Error('Team1 has not implemented yet!');
+    throw new Error('Team1 has not implemented yet!');
 
-    const response = await fetch('https://dog.ceo/api/breeds/image/random');
-    if (!response.ok) {
-        throw new Error(`HTTP Error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data.message;
+    // const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    // if (!response.ok) {
+    //     throw new Error(`HTTP Error! Status: ${response.status}`);
+    // }
+    // const data = await response.json();
+    // return data.message;
 }
 
 // ===== Team 2: cat =====
