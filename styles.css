@@ -40,10 +40,17 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.button {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #73ecff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-.button1,
-.button2,
-.button3 {
+.button1 {
   padding: 12px 24px;
   font-size: 16px;
   color: #ffffff;
