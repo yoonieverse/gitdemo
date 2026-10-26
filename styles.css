@@ -41,7 +41,9 @@ body {
   object-fit: cover;
 }
 
-.button {
+.button1,
+.button2,
+.button3 {
   padding: 12px 24px;
   font-size: 16px;
   color: #ffffff;
