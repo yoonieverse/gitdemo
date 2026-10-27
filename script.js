@@ -1,5 +1,5 @@
 
-const buttons = document.querySelectorAll('.button');
+const buttons = document.querySelectorAll('button[data-team]');
 
 // Which function loads the image for which team
 const imageFetchers = {
